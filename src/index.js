@@ -12,11 +12,11 @@ const Index = () => {
   return (
     <div id="main">
       <React.Profiler id="Optimization" onRender={renderCallback}>
-        <App />
         Counter: {inc}
         <button id="render" onClick={onClick}>
           Increase the Counter
         </button>
+        <App />
       </React.Profiler>
     </div>
   );
