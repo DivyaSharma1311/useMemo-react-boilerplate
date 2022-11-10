@@ -19,9 +19,6 @@ const OptimizeTheOperation = ({ onClick }) => {
 
   return (
     <div>
-      <button id="render" onClick={onClick}>
-        Re-render
-      </button>
       <br />
       Enter the number:
       <form onSubmit={submitHandler}>
