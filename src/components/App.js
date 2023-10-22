@@ -7,14 +7,22 @@ const App = () => {
   return <OptimizeTheOperation />;
 };
 
-const OptimizeTheOperation = ({ onClick }) => {
+const OptimizeTheOperation = () => {
   const [number, setNumber] = useState(10000);
-
-  const prime = primeNumber(number);
+   const [prime, setPrime] = useState([]);
+  
+  useMemo(() => {
+    const result = primeNumber(number);
+    setPrime(result);
+  }, [number]);
+    
 
   const submitHandler = (event) => {
     event.preventDefault();
-    setNumber(Number(event.target.num.value));
+    const newNumber = Number(event.target.num.value);
+    if (newNumber !== number) {
+       setNumber(newNumber);
+    }
   };
 
   return (
